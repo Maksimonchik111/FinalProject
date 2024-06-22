@@ -11,4 +11,5 @@ urlpatterns = [
     path('detail/<int:pk>', views.news_detail_view, name='detail'),
     path('news_create/', views.news_create, name='create'),
     path('news_delete/<int:pk>', views.news_delete, name='delete'),
+    path('author_list/', views.author_list, name='author')
 ]

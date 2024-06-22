@@ -59,27 +59,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
-						<h3>The best online game is out now!</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida....</p>
-						<a href="#" class="read-more">Read More  <img src="{% static 'img/icons/double-arrow.png' %}" alt="#"/></a>
-					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="intro-text-box text-box text-white">
-						<div class="top-meta">11.11.18  /  in <a href="">Playstation</a></div>
-						<h3>Top 5 best games in november</h3>
-						<p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum  labore suspendisse ultrices gravida....</p>
-						<a href="#" class="read-more">Read More  <img src="{% static 'img/icons/double-arrow.png' %}" alt="#"/></a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="top-meta">11.11.18  /  in <a href="">Reviews</a></div>
-						<h3>Get this game at a promo price</h3>
-						<p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida ncididunt ut labore ....</p>
-						<a href="#" class="read-more">Read More  <img src="{% static 'img/icons/double-arrow.png'%}" alt="#"/></a>
+						<div class="top-meta"></div>
+						<h3>Редакторы нашего сайта</h3>
+						<p>Наши редакторы-это одни из самых лучших журналистов всего интернета, которые находят и публикуют самые интересные новости! </p>
+						<a href="{% url 'author'  %}" class="read-more">Read More  <img src="{% static 'img/icons/double-arrow.png' %}" alt="#"/></a>
 					</div>
 				</div>
 			</div>
@@ -94,14 +80,8 @@
 			<div class="row">
 				<div class="col-xl-9 col-lg-8 col-md-7">
 					<div class="section-title text-white">
-						<h2>Latest News</h2>
+						<h2>Новости</h2>
 					</div>
-					<ul class="blog-filter">
-						<li><a href="#">Racing</a></li>
-						<li><a href="#">Shooters</a></li>
-						<li><a href="#">Strategy</a></li>
-						<li><a href="#">Online</a></li>
-					</ul>
 					<!-- Blog item -->
 					{% for news in newses %}
 					<div class="blog-item">
@@ -113,6 +93,10 @@
 							<h3>{{ news.title }}</h3>
 							<p>{{ news.description|truncatechars:52}}</p>
 							<a href="{% url 'detail' news.id %}" class="read-more">Подробнее  <img src="{% static 'img/icons/double-arrow.png' %}" alt="#"/></a>
+							<br>
+							<br>
+							<br>
+
 						</div>
 					</div>
 					{% endfor %}

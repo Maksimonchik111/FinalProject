@@ -1,11 +1,9 @@
 from django.shortcuts import render, redirect
-from .models import News
+from .models import News, Author
 from .forms import UserRegisterForm, UserLoginForm, NewsCreateForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import user_passes_test
-from django.core.paginator import Paginator
-
 
 def index_view(request):
     news = News.objects.all()
@@ -46,6 +44,12 @@ def news_detail_view(request, pk):
     detail_news = News.objects.get(id=pk)
 
     return render(request, 'app/detail.html',{'detail_news': detail_news})
+
+
+def author_list(request):
+    authors = Author.objects.all()
+
+    return render(request, 'app/author_list.html', {'authors': authors})
 
 
 @user_passes_test(lambda u: u.is_authenticated and u.is_superuser, login_url='/login/')
